@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N1V-Xu-SXd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pick Date-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="selectAnniversaryViewController" id="BYZ-38-t0r" customClass="SelectAnniversaryViewController" customModule="ar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dYs-s5-alq">
+                                <rect key="frame" x="0.0" y="401" width="414" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Oj1-Wu-2ve"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="didChangedDateValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="oTB-fe-dyg"/>
+                                </connections>
+                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AnS-NQ-hUr">
+                                <rect key="frame" x="30" y="321" width="354" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anniversary date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maP-ry-3Op">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="25"/>
+                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlh-8j-vaV">
+                                        <rect key="frame" x="0.0" y="35" width="354" height="25"/>
+                                        <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Qpo-sc-vcJ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dYs-s5-alq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2mx-60-RPU"/>
+                            <constraint firstItem="dYs-s5-alq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K87-6h-N13"/>
+                            <constraint firstItem="dYs-s5-alq" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Lxc-ov-OWJ"/>
+                            <constraint firstItem="dYs-s5-alq" firstAttribute="top" secondItem="AnS-NQ-hUr" secondAttribute="bottom" constant="20" id="cfF-kB-Ksb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AnS-NQ-hUr" secondAttribute="trailing" constant="30" id="lGj-a9-kqG"/>
+                            <constraint firstItem="AnS-NQ-hUr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="uPA-LT-6lr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pick Date" id="N5Y-Ws-1vR"/>
+                    <connections>
+                        <outlet property="anniversaryDateLabel" destination="tlh-8j-vaV" id="nqn-CK-0oz"/>
+                        <outlet property="anniversaryDatePicker" destination="dYs-s5-alq" id="4RL-tk-dH4"/>
+                        <segue destination="EbU-Oa-RLf" kind="show" id="6sQ-CN-SxW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064" y="-645"/>
+        </scene>
+        <!--Anniversary-->
+        <scene sceneID="ToN-fq-OXl">
+            <objects>
+                <viewController storyboardIdentifier="anniversaryDetailsViewController" id="vWu-Hb-5z7" customClass="AnniversaryDetailViewController" customModule="ar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g0y-fO-H3e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wz-YO-isJ">
+                                <rect key="frame" x="30" y="270" width="354" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uH9-pY-pGT">
+                                <rect key="frame" x="30" y="170" width="354" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YkQ-sX-gUa"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Days"/>
+                                    <segment title="Date"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangedSegmentedValue:" destination="vWu-Hb-5z7" eventType="valueChanged" id="QMF-3a-uit"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Jkp-3y-O1d" firstAttribute="trailing" secondItem="5wz-YO-isJ" secondAttribute="trailing" constant="30" id="ImJ-sL-mzi"/>
+                            <constraint firstItem="5wz-YO-isJ" firstAttribute="top" secondItem="uH9-pY-pGT" secondAttribute="bottom" constant="50" id="KHm-8m-dpl"/>
+                            <constraint firstItem="uH9-pY-pGT" firstAttribute="leading" secondItem="Jkp-3y-O1d" secondAttribute="leading" constant="30" id="TDk-pR-sk7"/>
+                            <constraint firstItem="Jkp-3y-O1d" firstAttribute="trailing" secondItem="uH9-pY-pGT" secondAttribute="trailing" constant="30" id="W1V-NV-mfE"/>
+                            <constraint firstItem="uH9-pY-pGT" firstAttribute="top" secondItem="Jkp-3y-O1d" secondAttribute="top" constant="30" id="XTQ-jY-VdL"/>
+                            <constraint firstItem="5wz-YO-isJ" firstAttribute="leading" secondItem="Jkp-3y-O1d" secondAttribute="leading" constant="30" id="p6k-Oi-tOv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jkp-3y-O1d"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Anniversary" id="SOg-ow-c4J"/>
+                    <connections>
+                        <outlet property="anniversaryDetailLabel" destination="5wz-YO-isJ" id="h6T-DX-cuR"/>
+                        <outlet property="segmentedControl" destination="uH9-pY-pGT" id="48J-ur-osc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNy-qz-01y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2973.913043478261" y="120.53571428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0Ec-y2-GoL">
+            <objects>
+                <navigationController storyboardIdentifier="selectAnniversaryNavigation" automaticallyAdjustsScrollViewInsets="NO" id="N1V-Xu-SXd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4pZ-9s-wGP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ogq-JD-vXi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XXC-RY-ybJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M1b-eq-1sS">
+            <objects>
+                <navigationController storyboardIdentifier="anniversaryDetailsNavigation" automaticallyAdjustsScrollViewInsets="NO" id="EbU-Oa-RLf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="UI1-iI-5dj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vWu-Hb-5z7" kind="relationship" relationship="rootViewController" id="c3x-Bj-njj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iup-wT-hrS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2063.768115942029" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+</document>
